@@ -36,8 +36,6 @@
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-
 - **Storing and fetching books**
 - **Storing Students and teachers data**
 - **booking**
@@ -120,8 +118,6 @@ Thats it now you can execute your program on termonal:)
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
-
-> Describe 1 - 3 features you will add to the project.
 
 - [ ] **Adding Books**
 - [ ] **Reteriving list of Books**

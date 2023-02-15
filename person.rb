@@ -1,10 +1,11 @@
-require './nameable.rb'
+require './nameable'
 
 class Person < Nameable
   attr_reader :id
   attr_accessor :name, :age, :parent_permission
 
   def initialize(age, name = 'Unknown', parent_permission: true)
+    super()
     @id = Random.rand(1..100)
     @name = name
     @age = age
@@ -32,6 +33,7 @@ class Decorator < Nameable
 
   # @param [nameable] nameable
   def initialize(nameable)
+    super()
     @nameable = nameable
   end
 
@@ -44,7 +46,7 @@ end
 # Concrete Decorators call the wrapped object and alter its result in some way.
 class CapitalizeDecorator < Decorator
   def correct_name
-    @nameable.correct_name.capitalize()
+    @nameable.correct_name.capitalize
   end
 end
 
@@ -57,8 +59,8 @@ class TrimmerDecorator < Decorator
 end
 
 person = Person.new(22, 'maximilianus')
-  person.correct_name
-  capitalizedPerson = CapitalizeDecorator.new(person)
-  capitalizedPerson.correct_name
-  capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
-  capitalizedTrimmedPerson.correct_name
+person.correct_name
+capitalized_person = CapitalizeDecorator.new(person)
+capitalized_person.correct_name
+capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
+capitalized_trimmed_person.correct_name

@@ -1,18 +1,15 @@
 require './app'
 require './choices'
 
-include Choices
-
-def main 
-    app = App.new
-    loop do
-      display_options
-      option = gets.chomp.to_i
-      exit if option == 7
-        options(option, app)
-    end
-    app.run
+def main
+  app = App.new
+  choice = Choices.new
+  loop do
+    choice.display_options
+    option = gets.chomp.to_i
+    exit if option == 7
+    choice.options(option, app)
   end
-  
-  main
-  
+end
+
+main

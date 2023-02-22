@@ -74,8 +74,4 @@ class App
     @rental_list.push(rental)
     puts 'Rental created successfully!'
   end
-
-  def run
-    puts 'Thanks for visiting...'
-  end
 end

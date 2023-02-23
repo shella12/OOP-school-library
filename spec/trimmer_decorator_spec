@@ -1,0 +1,9 @@
+require './person'
+
+describe TrimmerDecorator do
+    it "trimmes the incoming sting upto 10 characters when we call correct_name method" do
+    person = Person.new(12,"James Charles")
+    trimed_name = TrimmerDecorator.new(person)
+    expect(trimed_name.correct_name).to eql ("James Char") 
+    end
+end
